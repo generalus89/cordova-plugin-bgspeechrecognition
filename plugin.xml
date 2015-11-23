@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="li.iti.cordova.plugin.bgspeechrecognizer"
+        version="3.1.0">
+
+    <name>Cordova Background SpeechRecognizer</name>
+    <description>Cordova / PhoneGap 3.5+ extension for background speech recognition as a service.</description>
+    <license>MIT</license>
+    <keywords>speech,recognizer,audio,recognizing</keywords>
+    <!--<repo>https://github.com/sidneys/cordova-plugin-nativeaudio.git</repo>
+    <issue>https://github.com/sidneys/cordova-plugin-nativeaudio/issues</issue>-->
+
+    <engines>
+        <engine name="cordova" version=">=3.5"/>
+    </engines>
+
+    <js-module src="www/bgspeechrecognizer.js" name="bgspeechrecognizer">
+        <clobbers target="window.plugins.BgSpeechRecognizer"/>
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BgSpeechRecognizer">
+                <param name="android-package" value="li.iti.cordova.plugin.bgspeechrecognizer.BgSpeechRecognizer"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/BgSpeechRecognizer.java" target-dir="src/li/iti/cordova/plugin/bgspeechrecognizer"/>
+        <source-file src="src/android/LanguageDetailsChecker.java" target-dir="src/li/iti/cordova/plugin/bgspeechrecognizer" />
+
+    </platform>
+
+    <!-- ios -->
+    <!--<platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="NativeAudio">
+                <param name="ios-package" value="NativeAudio"/>
+            </feature>
+        </config-file>
+
+        <framework src="Foundation.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="AudioToolbox.framework"/>
+
+        <header-file src="src/ios/NativeAudio.h"/>
+        <source-file src="src/ios/NativeAudio.m"/>
+
+        <header-file src="src/ios/NativeAudioAsset.h"/>
+        <source-file src="src/ios/NativeAudioAsset.m"/>
+
+    </platform>-->
+
+</plugin>
