@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="li.iti.cordova.plugin.bgspeechrecognizer"
-        version="3.1.0">
+        version="1.0.0">
 
     <name>Cordova Background SpeechRecognizer</name>
     <description>Cordova / PhoneGap 3.5+ extension for background speech recognition as a service.</description>
